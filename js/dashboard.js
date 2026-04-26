@@ -69,7 +69,11 @@ function calculateCountdown() {
         });
 
         // שינוי עיצוב אם הבגרות קרובה (פחות משבוע)
-        if (diffDays <= 7) resultElement.style.color = "#ef4444";
-        else resultElement.style.color = "#333333";
+        if (diffDays <= 7) {
+            resultElement.classList.add('urgent-text'); 
+            } 
+        else {
+        resultElement.classList.remove('urgent-text');
+        }   
     }
 }
