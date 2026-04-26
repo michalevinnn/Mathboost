@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathBoost - אזור אישי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+
+    <header class="site-header">
+        <div class="container header-wrapper">
+            <div class="site-logo">
+                <a href="index.html">MathBoost</a>
+            </div>
+            
+            <nav class="navigation-menu">
+                <ul>
+                    <li><a href="lessons.html">נושאי לימוד</a></li>
+                    <li><a href="practice.html">תרגול ובחנים</a></li>
+                    <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אודות</a></li>
+                    <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">צור קשר</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="user-profile-container" id="userProfile">
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>שלום, דניאל</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <ul class="dropdown-menu" id="userDropdown">
+                        <li><a href="dashboard.html"><i class="fas fa-th-large"></i> אזור אישי</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש" class="logout-link"><i class="fas fa-sign-out-alt"></i> התנתק</a></li>
+                    </ul>
+                </div>
+                <a href="book-lesson.html" class="btn btn-primary">הזמן שיעור פרטי</a>
+            </div>
+        </div>
+    </header>
+
+<div class="dashboard-wrapper">
+        <aside class="dashboard-sidebar fade-in">
+            <section class="dashboard-section profile-card">
+                <div class="profile-header">
+                    <img src="images/daniel.png" alt="דניאל" class="profile-img">
+                    <div class="level-badge">רמה 3</div>
+                </div>
+                <h2>דניאל רוזן</h2>
+                <p><i class="fas fa-graduation-cap"></i> כיתה י' | 3 יח"ל</p>                
+                <div class="user-stats-saas">
+                    <div class="stat-item">
+                        <strong class="counter" data-target="85">0</strong>
+                        <span>ציון ממוצע</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong class="counter" data-target="12">0</strong>
+                        <span>שיעורים</span>
+                    </div>
+                </div>
+                <a href="book-lesson.html" class="btn btn-primary">קבע שיעור פרטי</a>
+            </section>
+
+            <section class="dashboard-section achievements-card">
+                <h3><i class="fas fa-trophy trophy-icon"></i> הישגים שלי</h3>                
+                <div class="streak-box-orange">
+                    <i class="fas fa-fire"></i>
+                    <div>
+                        <span class="counter" data-target="5">0</span> ימי למידה ברצף!
+                    </div>
+                </div>
+                <div class="improvement-stat">
+                    <i class="fas fa-chart-line"></i>
+                    <span>שיפור של 12% החודש</span>
+                </div>
+            </section>
+
+            <section class="dashboard-section aside-countdown">
+                <h4><i class="fas fa-calendar-alt"></i> עדכון תאריך בגרות</h4>
+                <div class="aside-calc-flex">
+                    <input type="date" id="examDate">
+                    <button type="button" onclick="calculateCountdown()" class="btn-orange-small">חשב</button>
+                </div>
+            </section>
+
+        </aside>
+
+        <main class="dashboard-main-content fade-in">
+
+            <div class="welcome-banner dashboard-section">
+                <div class="banner-content">
+                    <h1>היי דניאל, מוכן לבגרות?</h1>
+                    <p>השלמת כבר <span class="counter" data-target="65">0</span>% מהחומר השנתי!</p>
+                    <div class="main-progress-track">
+                        <div class="progress-bar-fill" data-width="65%"></div>
+                    </div>
+
+                    <a href="roadmap.html" class="btn-roadmap fade-in">
+                         <i class="fas fa-map-marked-alt"></i>
+                         <span>מפת הדרכים לבגרות</span>
+                     </a>
+                </div>
+                <div class="timer-widget-round">
+                    <div id="daysResult" class="counter" data-target="0">0</div>
+                    <span>ימים למבחן</span>
+                </div>
+            </div>
+
+            <div class="subject-cards-grid">
+                <article class="subject-card dashboard-section">
+                    <div class="sub-icon blue"><i class="fas fa-plus-minus"></i></div>
+                    <h4>אלגברה</h4>
+                    <ul class="sub-topics">
+                        <li><i class="fas fa-check done"></i> גדילה ודעיכה</li>
+                        <li><i class="fas fa-circle-notch in-progress"></i> מודל לינארי</li>
+                    </ul>
+                    <div class="card-progress"><div class="fill" style="width: 80%;"></div></div>
+                </article>
+
+                <article class="subject-card dashboard-section">
+                    <div class="sub-icon purple"><i class="fas fa-chart-pie"></i></div>
+                    <h4>הסתברות</h4>
+                    <ul class="sub-topics">
+                        <li><i class="fas fa-circle-notch in-progress"></i> סטטיסטיקה</li>
+                    </ul>
+                    <div class="card-progress"><div class="fill" style="width: 40%;"></div></div>
+                </article>
+
+                <article class="subject-card dashboard-section">
+                    <div class="sub-icon orange"><i class="fas fa-shapes"></i></div>
+                    <h4>גיאומטריה</h4>
+                    <ul class="sub-topics">
+                        <li><i class="fas fa-circle todo"></i> דמיון משולשים</li>
+                    </ul>
+                    <div class="card-progress"><div class="fill" style="width: 15%;"></div></div>
+                </article>
+            </div>
+
+            <section class="dashboard-section omer-workspace">
+                <div class="tutor-header-saas">
+                    <div class="tutor-header-right">
+                        <img src="images/teacher_omer.jpeg" alt="עומר שמול" class="tutor-profile-img">
+                        <h3>פידבק מעומר</h3>
+                    </div>
+                    <a href="https://wa.me/972544593510" class="wa-btn-top" target="_blank">
+                        <i class="fab fa-whatsapp"></i> דבר עם עומר
+                    </a>
+                </div>
+
+                <div class="tutor-main-body">
+                    <p class="feedback-text-saas">
+                        שיפור מצוין בגדילה ודעיכה עוד פוש קטן ואתה לגמרי מצטיין בנושא הזה. חשוב לפתור גם 2 בגרויות בשבוע לפחות.
+                    </p>
+
+                    <div class="homework-tasks-saas">
+                        <h4>משימות לשיעור הבא:</h4>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header jquery-trigger">
+                                <span><i class="fas fa-play-circle"></i> בגרות קיץ 2023 מועד א' - שאלה 3</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <img src="images/summer2023.jpeg" alt="שאלה" class="hw-img">
+                                <div class="video-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/jWOS_A2eCjg" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header jquery-trigger">
+                                <span><i class="fas fa-play-circle"></i> בגרות חורף 2024 - שאלה 1</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <img src="images/winter2025.png" alt="שאלה" class="hw-img">
+                                <div class="video-wrapper">
+                                    <iframe src="https://www.youtube.com/embed/NykTjPaTZcg" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="accordion-item">
+                                <div class="accordion-header jquery-trigger">
+                                    <span><i class="fas fa-file-pdf"></i> בגרות קיץ 2025 לתרגול אישי</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="accordion-content">
+                                    <p>פתור את שאלות 1-3 והעלה למערכת.</p>
+                                    <a href="files/שאלון-35381-קיץ-25.pdf" download class="download-link-btn">
+                                        <i class="fas fa-download"></i> הורד PDF לתרגול
+                                    </a>
+                                </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="workspace-footer">
+                    <button class="btn-outline-video" onclick="alertNotImplemented(event)"><i class="fas fa-video"></i> הקלטת שיעור אחרון</button>
+                    <span class="next-lesson-info">השיעור הבא ב-23.4 ב-17:00</span>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>MathBoost</h4>
+                    <p>© 2025 כל הזכויות שמורות</p>
+                </div>
+                <div class="footer-column">
+                    <h4>ניווט מהיר</h4>
+                    <ul>
+                        <li><a href="index.html">דף הבית</a></li>
+                        <li><a href="lessons.html">נושאי לימוד</a></li>
+                        
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אודות</a></li>
+                        
+                        <li><a href="book-lesson.html">קביעת שיעור</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>צור קשר</h4>
+                    <ul>
+                        <li><a href="mailto:info@mathboost.co.il">info@mathboost.co.il</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">פייסבוק</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אינסטגרם</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/not-implemented-message.js"></script>
+    <script src="js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

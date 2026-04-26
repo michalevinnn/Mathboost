@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathBoost - מפת הדרכים לבגרות</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="roadmap-page">
+
+        <header class="site-header">
+        <div class="container header-wrapper">
+            <div class="site-logo">
+                <a href="index.html">MathBoost</a>
+            </div>
+            
+            <nav class="navigation-menu">
+                <ul>
+                    <li><a href="lessons.html">נושאי לימוד</a></li>
+                    <li><a href="practice.html">תרגול ובחנים</a></li>
+                    <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אודות</a></li>
+                    <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">צור קשר</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="user-profile-container" id="userProfile">
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>שלום, דניאל</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <ul class="dropdown-menu" id="userDropdown">
+                        <li><a href="dashboard.html"><i class="fas fa-th-large"></i> אזור אישי</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש" class="logout-link"><i class="fas fa-sign-out-alt"></i> התנתק</a></li>
+                    </ul>
+                </div>
+                <a href="book-lesson.html" class="btn btn-primary">הזמן שיעור פרטי</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="roadmap-header sticky-nav">
+        <div class="header-container">
+            <a href="dashboard.html" class="back-link"><i class="fas fa-arrow-right"></i> חזרה</a>
+            <div class="current-goal-display">
+                היעד הבא: <span id="nextGoalText">אלגברה - גדילה ודעיכה</span>
+            </div>
+            <div class="global-progress">
+                <span class="progress-percent">0%</span>
+                <div class="progress-track"><div class="progress-fill-bar" id="globalProgressBar"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <main class="roadmap-container">
+        <section class="learning-unit" id="unit-algebra">
+            <h2 class="unit-title"><i class="fas fa-square-root-alt icon-algebra"></i> יחידה 1: ממלכת האלגברה</h2>
+            <div class="path-segment">
+                <article class="node theory active" data-name="גדילה ודעיכה" data-type="לימוד" data-desc="מבוא ומושגי יסוד בגדילה ודעיכה.">
+                    <div class="node-circle"><i class="fas fa-book"></i></div>
+                    <span class="node-label">גדילה ודעיכה</span>
+                </article>
+                <article class="node practice locked" data-name="מודל לינארי" data-type="תרגול" data-desc="תרגול קריאת גרפים ומציאת משוואות.">
+                    <div class="node-circle"><i class="fas fa-dumbbell"></i></div>
+                    <span class="node-label">מודל לינארי</span>
+                </article>
+                <article class="node boss locked" data-name="מיני בוס אלגברה" data-type="בגרות" data-desc="פתרון שאלות אלגברה מבגרויות 2022.">
+                    <div class="node-circle"><i class="fas fa-shield-alt"></i></div>
+                    <span class="node-label">מיני בוס</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="learning-unit" id="unit-stats-geom">
+                <h2 class="unit-title"><i class="fas fa-shapes icon-geom"></i> יחידה 2: אי ההסתברות והגיאומטריה</h2>
+                <div class="path-segment reverse">
+                    <article class="node theory locked" data-name="דמיון משולשים" data-type="לימוד" data-desc="משפטי דמיון וחישובי צלעות במשולשים דומים.">
+                        <div class="node-circle"><i class="fas fa-play fa-rotate-270"></i></div>
+                        <span class="node-label">דמיון משולשים</span>
+                    </article>
+                    <article class="node theory locked" data-name="סטטיסטיקה" data-type="לימוד" data-desc="ממוצע, חציון ושכיח בסטטיסטיקה.">
+                        <div class="node-circle"><i class="fas fa-chart-bar"></i></div>
+                        <span class="node-label">סטטיסטיקה</span>
+                    </article>
+                    <article class="node practice locked" data-name="דיאגרמת עץ" data-type="תרגול" data-desc="חישוב הסתברויות באמצעות עץ.">
+                        <div class="node-circle"><i class="fas fa-tree"></i></div>
+                        <span class="node-label">דיאגרמת עץ</span>
+                    </article>
+                </div>
+        </section>
+
+        <section class="learning-unit final-stage">
+            <h2 class="unit-title"><i class="fas fa-crown icon-master"></i> שלב המאסטר</h2>            
+            <div class="path-segment">
+                <article class="node theory locked" data-name="טיפים לבגרות" data-type="טיפים" data-desc="איך לנהל את הזמן נכון במבחן?">
+                    <div class="node-circle"><i class="fas fa-lightbulb"></i></div>
+                    <span class="node-label">טיפים</span>
+                </article>
+                <article class="node boss locked" data-name="הדרקון - בגרות 2024" data-type="בוס" data-desc="פתרון מבחן בגרות מלא על זמן.">
+                    <div class="node-circle"><i class="fas fa-crown"></i></div>
+                    <span class="node-label">הבגרות</span>
+                </article>
+                <article class="node simulation locked" data-name="סימולציה מלאה" data-type="מבחן" data-desc="סימולציה מלאה של מבחן הבגרות על זמן (דף זה לא מומש).">
+                    <div class="node-circle"><i class="fas fa-stopwatch"></i></div>
+                    <span class="node-label">סימולציה</span>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id="celebrationOverlay" class="celebration-modal">
+        <div class="celebration-content">
+            <button class="close-celebration-x" onclick="closeCelebration()">&times;</button>
+            
+            <div class="confetti-icon">🥳🏆</div>
+            <h2>דניאל, אתה אלוף!</h2>
+            <p>כבשת את כל התחנות בדרך לבגרות. עכשיו אתה מוכן ב-100%!</p>
+            
+            <button id="btnGoToSimulation" class="btn-primary-saas">יאללה לבגרות!</button>
+        </div>
+    </div>
+    
+    <aside class="task-drawer" id="taskDrawer">
+        <div class="drawer-header">
+            <button class="close-drawer">&times;</button> <h3 id="drawerTitle">שם התחנה</h3>
+        </div>
+        <div class="drawer-body">
+            <p id="drawerDesc">תיאור המשימה יופיע כאן.</p>
+            <ul class="task-checklist">
+                <li><i class="fas fa-link"></i> <a href="lessons.html">צפייה בתיאוריה</a></li>
+                <li><i class="fas fa-tasks"></i> <a href="practice.html">תרגול בסיסי</a></li>
+                <li><i class="fas fa-file-pdf"></i> <a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">הורד דף עבודה</a></li>
+            </ul>
+            <button class="btn-complete-task" id="btnMarkDone">סיימתי את התחנה! 🚀</button>
+        </div>
+    </aside>
+
+      <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>MathBoost</h4>
+                    <p>© 2025 כל הזכויות שמורות</p>
+                </div>
+                <div class="footer-column">
+                    <h4>ניווט מהיר</h4>
+                    <ul>
+                        <li><a href="index.html">דף הבית</a></li>
+                        <li><a href="lessons.html">נושאי לימוד</a></li>
+                        
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אודות</a></li>
+                        
+                        <li><a href="book-lesson.html">קביעת שיעור</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>צור קשר</h4>
+                    <ul>
+                        <li><a href="mailto:info@mathboost.co.il">info@mathboost.co.il</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">פייסבוק</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אינסטגרם</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/not-implemented-message.js"></script>
+    <script src="js/roadmap.js"></script>
+</body>
+</html>

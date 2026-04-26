@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathBoost - גדילה ודעיכה</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-wrapper">
+            <div class="site-logo">
+                <a href="index.html">MathBoost</a>
+            </div>
+            
+            <nav class="navigation-menu">
+                <ul>
+                    <li><a href="lessons.html">נושאי לימוד</a></li>
+                    <li><a href="practice.html">תרגול ובחנים</a></li>
+                    <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אודות</a></li>
+                    <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">צור קשר</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="user-profile-container" id="userProfile">
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>שלום, דניאל</span>
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <ul class="dropdown-menu" id="userDropdown">
+                        <li><a href="dashboard.html"><i class="fas fa-th-large"></i> אזור אישי</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש" class="logout-link"><i class="fas fa-sign-out-alt"></i> התנתק</a></li>
+                    </ul>
+                </div>
+                <a href="book-lesson.html" class="btn btn-primary">הזמן שיעור פרטי</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="lesson-unit-page">
+        <section class="lesson-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">דף הבית</a> 
+                    <i class="fas fa-chevron-left"></i> 
+                    <a href="lessons.html">נושאי לימוד</a> 
+                    <i class="fas fa-chevron-left"></i> 
+                    <span>גדילה ודעיכה</span>
+                </nav>
+                <h1>גדילה ודעיכה - כיתה י' (3 יחידות לימוד)</h1>
+            </div>
+        </section>
+
+        <div class="container lesson-container">
+            <div class="main-content">
+                
+                <section class="content-block" id="intro">
+                    <h2><i class="fas fa-book-open"></i> מה זה בכלל גדילה ודעיכה?</h2>
+                    <p>גדילה ודעיכה מתארות שינוי בערך מסוים לאורך זמן בקצב קבוע (באחוזים). </p>
+                    
+                    <div class="formula-card">
+                        <h3>הנוסחה המרכזית:</h3>
+                        <div class="formula-display">M<sub>t</sub> = M<sub>0</sub> &bull; q<sup>t</sup></div>
+                        <div class="formula-legend">
+                            <ul>
+                                <li><strong>M<sub>0</sub></strong>: הכמות ההתחלתית. </li>
+                                <li><strong>q</strong>: גורם הגדילה או הדעיכה. </li>
+                                <li><strong>t</strong>: מספר פרקי הזמן. </li>
+                                <li><strong>M<sub>t</sub></strong>: הכמות לאחר זמן t. </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>איך מוצאים את q?</h3>
+                    <p>גורם השינוי (q) נקבע לפי אחוז השינוי (p): </p>
+                    <div class="q-logic">
+                        <div class="logic-box growth"><strong>גדילה (עלייה):</strong> <span class="math">q = 1 + p/100</span></div>
+                        <div class="logic-box decay"><strong>דעיכה (ירידה):</strong> <span class="math">q = 1 - p/100</span></div>
+                    </div>
+
+                    <table class="q-table">
+                        <thead>
+                            <tr>
+                                <th>אחוז השינוי (p)</th>
+                                <th>סוג השינוי</th>
+                                <th>חישוב</th>
+                                <th>גורם השינוי (q)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>5%</td><td>גדילה</td><td>1 + 0.05</td><td>1.05</td></tr>
+                            <tr><td>5%</td><td>דעיכה</td><td>1 - 0.05</td><td>0.95</td></tr>
+                            <tr><td>10%</td><td>גדילה</td><td>1 + 0.10</td><td>1.1</td></tr>
+                            <tr><td>10%</td><td>דעיכה</td><td>1 - 0.10</td><td>0.9</td></tr>
+                            <tr><td>2.4%</td><td>גדילה</td><td>1 + 0.024</td><td>1.024</td></tr>
+                            <tr><td>2.4%</td><td>דעיכה</td><td>1 - 0.024</td><td>0.976</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="steps-box">
+                        <h3><i class="fas fa-list-ol"></i> שלבי העבודה בפתרון שאלה:</h3>
+                        <ol>
+                            <li><strong>זיהוי הנתונים:</strong> הוצאת הערכים M<sub>0</sub>, M<sub>t</sub>, p, t מהשאלה. </li>
+                            <li><strong>חישוב q:</strong> מציאת גורם השינוי לפי הנוסחה (1 &plusmn; p/100). </li>
+                            <li><strong>הצבה:</strong> הכנסת כל הנתונים לנוסחה המרכזית. </li>
+                            <li><strong>חישוב:</strong> פתרון בעזרת מחשבון (קודם חזקה, אחר כך כפל). </li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section class="content-block" id="warmup">
+                    <h2><i class="fas fa-pencil-alt"></i> שאלות חימום</h2>
+                    
+                    <div class="example-box">
+                        <p class="question"><strong>דוגמה 1: גדילה (ריבית בבנק)</strong><br>
+                        אדם הפקיד בבנק 5,000 ש"ח בתוכנית חיסכון הנושאת ריבית שנתית של 4%. כמה כסף יהיה לו בחיסכון לאחר 6 שנים? </p>
+                        <button class="toggle-solution-btn">צפייה בפתרון</button>
+                        <div class="solution-content">
+                            <p><strong>נתונים:</strong> M<sub>0</sub> = 5000, p = 4%, t = 6 </p>
+                            <p><strong>חישוב q:</strong> q = 1 + 4/100 = 1.04 </p>
+                            <p><strong>הצבה:</strong> M<sub>6</sub> = 5000 &bull; 1.04<sup>6</sup> </p>
+                            <p><strong>תשובה:</strong> 6,326.59 ש"ח. </p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <p class="question"><strong>דוגמה 2: דעיכה (ערך מכונית)</strong><br>
+                        ערך מכונית חדשה הוא 120,000 ש"ח. בכל שנה ערך המכונית יורד ב-15%. מה יהיה מחיר המכונית לאחר 3 שנים? </p>
+                        <button class="toggle-solution-btn">צפייה בפתרון</button>
+                        <div class="solution-content">
+                            <p><strong>נתונים:</strong> M<sub>0</sub> = 120,000, p = 15%, t = 3 </p>
+                            <p><strong>חישוב q:</strong> q = 1 - 15/100 = 0.85 (ירידה!) </p>
+                            <p><strong>הצבה:</strong> M<sub>3</sub> = 120,000 &bull; 0.85<sup>3</sup> </p>
+                            <p><strong>תשובה:</strong> 73,695 ש"ח. </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-block video-section" id="bagrut">
+                    <h2><i class="fas fa-video"></i> שאלת בגרות - פתרון מודרך</h2>
+                    <div class="bagrut-question-text">
+                        <p><strong>השאלה:</strong> דניאל קנה את מכוניתו לפני 3 שנים בדיוק. מחירה היום הוא 52,750 שקלים. מחיר המכונית של דניאל יורד בכל שנה ב- 9%. </p>
+                        <p><strong>א.</strong>מה יהיה מחיר המכונית של דניאל בעוד 3 שנים מהיום ?</p>
+                        <p><strong>ב.</strong>באיזה סכום קנה דניאל את המכונית ?</p>
+                        <p><strong>ג.</strong>דניאל החליט שימכור את המכונית כעבור 10 שנים מיום הקנייה. בכמה שקלים ירד מחיר המכונית של דניאל (מיום הקנייה עד יום המכירה) ?</p>
+                    </div>
+                    <button class="toggle-solution-btn">צפייה בפתרון</button>
+                    <div class="solution-content">
+                        <p><strong>א.</strong> 39,751 ש"ח </p>
+                        <p><strong>ב.</strong> 70,000 ש"ח </p>
+                        <p><strong>ג.</strong> 42,741 ש"ח </p>
+                        <div class="video-wrapper">
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                src="https://www.youtube.com/embed/3n6amXvlbA4" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-block" id="extra">
+                    <h2><i class="fas fa-tasks"></i> שאלות נוספות מבגרויות</h2>
+                    <div class="example-box">
+                        <p class="question"><strong>שאלה 1:</strong> בבריכת דגים היו 2,000 דגים. כמות הדגים גדלה בכל שנה ב-8%. כמה דגים יהיו בבריכה לאחר 4 שנים? </p>
+                        <button class="toggle-solution-btn">צפייה בפתרון</button>
+                        <div class="solution-content">M<sub>4</sub> = 2000 &bull; 1.08<sup>4</sup> = 2,720 דגים. </div>
+                    </div>
+                    <div class="example-box">
+                        <p class="question"><strong>שאלה 2:</strong> מחיר מכונה יורד בכל שנה ב-12%. מחירה היום הוא 15,000 ש"ח. מה יהיה מחירה בעוד 5 שנים? </p>
+                        <button class="toggle-solution-btn">צפייה בפתרון</button>
+                        <div class="solution-content">M<sub>5</sub> = 15,000 &bull; 0.88<sup>5</sup> = 7,915.9 ש"ח. </div>
+                    </div>
+                    <div class="example-box">
+                        <p class="question"><strong>שאלה 3:</strong> אדם הפקיד 8,000 ש"ח בתוכנית חיסכון עם ריבית של 3.5% בשנה. כמה כסף יהיה לו לאחר 10 שנים? </p>
+                        <button class="toggle-solution-btn">צפייה בפתרון</button>
+                        <div class="solution-content">M<sub>10</sub> = 8,000 &bull; 1.035<sup>10</sup> = 11,284.8 ש"ח. </div>
+                    </div>
+                </section>
+
+                <div class="lesson-footer">
+                    <a href="practice.html" class="btn btn-primary btn-large">בחן את עצמך <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+
+            <aside class="sidebar-tips">
+                <div class="teacher-callout">
+                    <img src="images/teacher_omer.jpeg" alt="עומר המורה" class="teacher-avatar">
+                    <div class="tip-bubble">
+                        <h4>הטיפ של עומר:</h4>
+                        <p>שימו לב למילים "גדלה" או "קטנה". הן קובעות אם נוסיף או נחסיר מה-1 בנוסחת ה-q! </p>
+                    </div>
+                </div>
+                <div class="sticky-nav">
+                    <h3>ניווט מהיר בשיעור</h3>
+                    <ul>
+                        <li><a href="#intro">מה זה בכלל גדילה ודעיכה?</a></li>
+                        <li><a href="#warmup">שאלות חימום</a></li>
+                        <li><a href="#bagrut">שאלת בגרות - פתרון מודרך</a></li>
+                        <li><a href="#extra">שאלות נוספות מבגרויות</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+     <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>MathBoost</h4>
+                    <p>© 2025 כל הזכויות שמורות</p>
+                </div>
+                <div class="footer-column">
+                    <h4>ניווט מהיר</h4>
+                    <ul>
+                        <li><a href="index.html">דף הבית</a></li>
+                        <li><a href="lessons.html">נושאי לימוד</a></li>
+                        
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אודות</a></li>
+                        
+                        <li><a href="book-lesson.html">קביעת שיעור</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>צור קשר</h4>
+                    <ul>
+                        <li><a href="mailto:info@mathboost.co.il">info@mathboost.co.il</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">פייסבוק</a></li>
+                        <li><a href="#" onclick="alertNotImplemented(event)" title="הדף לא מומש">אינסטגרם</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/not-implemented-message.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/lesson-unit.js"></script>
+     <script src="js/header.js"></script>
+
+</body>
+</html>
