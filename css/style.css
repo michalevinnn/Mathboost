@@ -1528,6 +1528,11 @@ html, body {
     border: 5px solid var(--accent-color); box-shadow: 0 10px 20px rgba(249,115,22,0.3);
 }
 
+.urgent-text {
+    color: #ef4444 !important; /* אדום בוהק */
+    font-weight: bold;
+}
+
 .dashboard-page .trophy-icon {
     color: #f1c40f;
     margin-left: 8px;
